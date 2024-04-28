@@ -21,6 +21,12 @@ using Application.Features.ListeVeris.Constants;
 using Application.Features.Medyas.Constants;
 using Application.Features.Mesajs.Constants;
 using Application.Features.MesajEks.Constants;
+using Application.Features.Portfolyoes.Constants;
+using Application.Features.Siparis.Constants;
+using Application.Features.SistemGecmisis.Constants;
+using Application.Features.Takims.Constants;
+using Application.Features.Teklifs.Constants;
+using Application.Features.Tickets.Constants;
 
 namespace Persistence.EntityConfigurations;
 
@@ -318,6 +324,90 @@ public class OperationClaimConfiguration : IEntityTypeConfiguration<OperationCla
                 new() { Id = ++lastId, Name = MesajEksOperationClaims.Create },
                 new() { Id = ++lastId, Name = MesajEksOperationClaims.Update },
                 new() { Id = ++lastId, Name = MesajEksOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Portfolyoes CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Admin },
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Read },
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Write },
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Create },
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Update },
+                new() { Id = ++lastId, Name = PortfolyoesOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Siparis CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Admin },
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Read },
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Write },
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Create },
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Update },
+                new() { Id = ++lastId, Name = SiparisOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region SistemGecmisis CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Admin },
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Read },
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Write },
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Create },
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Update },
+                new() { Id = ++lastId, Name = SistemGecmisisOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Takims CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Read },
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Write },
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Create },
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Update },
+                new() { Id = ++lastId, Name = TakimsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Teklifs CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Read },
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Write },
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Create },
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Update },
+                new() { Id = ++lastId, Name = TeklifsOperationClaims.Delete },
+            ]
+        );
+        #endregion
+        
+        
+        #region Tickets CRUD
+        featureOperationClaims.AddRange(
+            [
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Admin },
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Read },
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Write },
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Create },
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Update },
+                new() { Id = ++lastId, Name = TicketsOperationClaims.Delete },
             ]
         );
         #endregion

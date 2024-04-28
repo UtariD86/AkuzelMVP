@@ -37,6 +37,12 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IMedyaRepository, MedyaRepository>();
         services.AddScoped<IMesajRepository, MesajRepository>();
         services.AddScoped<IMesajEkRepository, MesajEkRepository>();
+        services.AddScoped<IPortfolyoRepository, PortfolyoRepository>();
+        services.AddScoped<ISiparisRepository, SiparisRepository>();
+        services.AddScoped<ISistemGecmisiRepository, SistemGecmisiRepository>();
+        services.AddScoped<ITakimRepository, TakimRepository>();
+        services.AddScoped<ITeklifRepository, TeklifRepository>();
+        services.AddScoped<ITicketRepository, TicketRepository>();
         return services;
     }
 }

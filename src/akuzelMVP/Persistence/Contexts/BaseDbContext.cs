@@ -29,6 +29,12 @@ public class BaseDbContext : DbContext
     public DbSet<Medya> Medyas { get; set; }
     public DbSet<Mesaj> Mesajs { get; set; }
     public DbSet<MesajEk> MesajEks { get; set; }
+    public DbSet<Portfolyo> Portfolyoes { get; set; }
+    public DbSet<Siparis> Siparis { get; set; }
+    public DbSet<SistemGecmisi> SistemGecmisis { get; set; }
+    public DbSet<Takim> Takims { get; set; }
+    public DbSet<Teklif> Teklifs { get; set; }
+    public DbSet<Ticket> Tickets { get; set; }
 
     public BaseDbContext(DbContextOptions dbContextOptions, IConfiguration configuration)
         : base(dbContextOptions)

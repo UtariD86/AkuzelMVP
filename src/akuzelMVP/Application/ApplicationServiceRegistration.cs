@@ -35,6 +35,12 @@ using Application.Services.ListeVeris;
 using Application.Services.Medyas;
 using Application.Services.Mesajs;
 using Application.Services.MesajEks;
+using Application.Services.Portfolyoes;
+using Application.Services.Siparis;
+using Application.Services.SistemGecmisis;
+using Application.Services.Takims;
+using Application.Services.Teklifs;
+using Application.Services.Tickets;
 
 namespace Application;
 
@@ -91,6 +97,12 @@ public static class ApplicationServiceRegistration
         services.AddScoped<IMedyaService, MedyaManager>();
         services.AddScoped<IMesajService, MesajManager>();
         services.AddScoped<IMesajEkService, MesajEkManager>();
+        services.AddScoped<IPortfolyoService, PortfolyoManager>();
+        services.AddScoped<ISiparisService, SiparisManager>();
+        services.AddScoped<ISistemGecmisiService, SistemGecmisiManager>();
+        services.AddScoped<ITakimService, TakimManager>();
+        services.AddScoped<ITeklifService, TeklifManager>();
+        services.AddScoped<ITicketService, TicketManager>();
         return services;
     }
 
