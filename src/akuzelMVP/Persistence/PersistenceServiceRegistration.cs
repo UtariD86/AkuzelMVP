@@ -1,4 +1,4 @@
-﻿using Application.Services.Repositories;
+using Application.Services.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,6 +22,21 @@ public static class PersistenceServiceRegistration
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IUserOperationClaimRepository, UserOperationClaimRepository>();
 
+        services.AddScoped<IBakiyeGecmisiRepository, BakiyeGecmisiRepository>();
+        services.AddScoped<IBankaHesapRepository, BankaHesapRepository>();
+        services.AddScoped<IBildirimRepository, BildirimRepository>();
+        services.AddScoped<IDegerlendirmeRepository, DegerlendirmeRepository>();
+        services.AddScoped<IIlanRepository, IlanRepository>();
+        services.AddScoped<IIlanListeRepository, IlanListeRepository>();
+        services.AddScoped<IKullaniciAyarRepository, KullaniciAyarRepository>();
+        services.AddScoped<IKullaniciBildirimRepository, KullaniciBildirimRepository>();
+        services.AddScoped<IKullaniciTakimRepository, KullaniciTakimRepository>();
+        services.AddScoped<IKuponRepository, KuponRepository>();
+        services.AddScoped<IListeRepository, ListeRepository>();
+        services.AddScoped<IListeVeriRepository, ListeVeriRepository>();
+        services.AddScoped<IMedyaRepository, MedyaRepository>();
+        services.AddScoped<IMesajRepository, MesajRepository>();
+        services.AddScoped<IMesajEkRepository, MesajEkRepository>();
         return services;
     }
 }

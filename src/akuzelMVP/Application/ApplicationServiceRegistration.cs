@@ -1,4 +1,4 @@
-﻿using System.Reflection;
+using System.Reflection;
 using Application.Services.AuthenticatorService;
 using Application.Services.AuthService;
 using Application.Services.UsersService;
@@ -20,6 +20,21 @@ using NArchitecture.Core.Mailing;
 using NArchitecture.Core.Mailing.MailKit;
 using NArchitecture.Core.Security.DependencyInjection;
 using NArchitecture.Core.Security.JWT;
+using Application.Services.BakiyeGecmisis;
+using Application.Services.BankaHesaps;
+using Application.Services.Bildirims;
+using Application.Services.Degerlendirmes;
+using Application.Services.Ilans;
+using Application.Services.IlanListes;
+using Application.Services.KullaniciAyars;
+using Application.Services.KullaniciBildirims;
+using Application.Services.KullaniciTakims;
+using Application.Services.Kupons;
+using Application.Services.Listes;
+using Application.Services.ListeVeris;
+using Application.Services.Medyas;
+using Application.Services.Mesajs;
+using Application.Services.MesajEks;
 
 namespace Application;
 
@@ -61,6 +76,21 @@ public static class ApplicationServiceRegistration
 
         services.AddSecurityServices<Guid, int, Guid>(tokenOptions);
 
+        services.AddScoped<IBakiyeGecmisiService, BakiyeGecmisiManager>();
+        services.AddScoped<IBankaHesapService, BankaHesapManager>();
+        services.AddScoped<IBildirimService, BildirimManager>();
+        services.AddScoped<IDegerlendirmeService, DegerlendirmeManager>();
+        services.AddScoped<IIlanService, IlanManager>();
+        services.AddScoped<IIlanListeService, IlanListeManager>();
+        services.AddScoped<IKullaniciAyarService, KullaniciAyarManager>();
+        services.AddScoped<IKullaniciBildirimService, KullaniciBildirimManager>();
+        services.AddScoped<IKullaniciTakimService, KullaniciTakimManager>();
+        services.AddScoped<IKuponService, KuponManager>();
+        services.AddScoped<IListeService, ListeManager>();
+        services.AddScoped<IListeVeriService, ListeVeriManager>();
+        services.AddScoped<IMedyaService, MedyaManager>();
+        services.AddScoped<IMesajService, MesajManager>();
+        services.AddScoped<IMesajEkService, MesajEkManager>();
         return services;
     }
 
