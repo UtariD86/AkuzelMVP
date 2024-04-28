@@ -36,7 +36,7 @@ public class GetListSiparisQuery : IRequest<GetListResponse<GetListSiparisListIt
 
         public async Task<GetListResponse<GetListSiparisListItemDto>> Handle(GetListSiparisQuery request, CancellationToken cancellationToken)
         {
-            IPaginate<Siparis> siparis = await _siparisRepository.GetListAsync(
+            IPaginate<Domain.Entities.Siparis> siparis = await _siparisRepository.GetListAsync(
                 index: request.PageRequest.PageIndex,
                 size: request.PageRequest.PageSize, 
                 cancellationToken: cancellationToken

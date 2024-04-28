@@ -34,7 +34,7 @@ public class Ilan : Entity<Guid>
    
     public virtual User? IlanSahibi { get; set; }
 
-    public virtual ListeVeri Kategori { get; set; }
+    public virtual ListeVeri? Kategori { get; set; }
 
     public virtual ICollection<Teklif> Teklifs { get; set; } = default!;
 

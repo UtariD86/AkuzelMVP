@@ -14,18 +14,18 @@ public class MappingProfiles : Profile
 {
     public MappingProfiles()
     {
-        CreateMap<CreateSiparisCommand, Siparis>();
-        CreateMap<Siparis, CreatedSiparisResponse>();
+        CreateMap<CreateSiparisCommand, Domain.Entities.Siparis>();
+        CreateMap<Domain.Entities.Siparis, CreatedSiparisResponse>();
 
-        CreateMap<UpdateSiparisCommand, Siparis>();
-        CreateMap<Siparis, UpdatedSiparisResponse>();
+        CreateMap<UpdateSiparisCommand, Domain.Entities.Siparis>();
+        CreateMap<Domain.Entities.Siparis, UpdatedSiparisResponse>();
 
-        CreateMap<DeleteSiparisCommand, Siparis>();
-        CreateMap<Siparis, DeletedSiparisResponse>();
+        CreateMap<DeleteSiparisCommand, Domain.Entities.Siparis>();
+        CreateMap<Domain.Entities.Siparis, DeletedSiparisResponse>();
 
-        CreateMap<Siparis, GetByIdSiparisResponse>();
+        CreateMap<Domain.Entities.Siparis, GetByIdSiparisResponse>();
 
-        CreateMap<Siparis, GetListSiparisListItemDto>();
-        CreateMap<IPaginate<Siparis>, GetListResponse<GetListSiparisListItemDto>>();
+        CreateMap<Domain.Entities.Siparis, GetListSiparisListItemDto>();
+        CreateMap<IPaginate<Domain.Entities.Siparis>, GetListResponse<GetListSiparisListItemDto>>();
     }
 }

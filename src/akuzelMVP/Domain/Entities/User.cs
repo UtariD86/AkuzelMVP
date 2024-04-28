@@ -6,15 +6,15 @@ namespace Domain.Entities;
 public class User : NArchitecture.Core.Security.Entities.User<Guid>
 {
 
-    public Guid TakimId { get; set; }
+    public Guid? TakimId { get; set; }
 
     public double Cuzdan { get; set; }
 
-    public Guid DepartmanId { get; set; } // listeveri
+    public Guid? DepartmanId { get; set; } // listeveri
 
-    public Guid IlId { get; set; }
+    public Guid? IlId { get; set; }
 
-    public Guid IlceId { get; set; }
+    public Guid? IlceId { get; set; }
 
     public string Adı { get; set; }
 
@@ -31,7 +31,6 @@ public class User : NArchitecture.Core.Security.Entities.User<Guid>
     public virtual ICollection<OtpAuthenticator> OtpAuthenticators { get; set; } = default!;
     public virtual ICollection<EmailAuthenticator> EmailAuthenticators { get; set; } = default!;
 
-    public Guid DuzenleyenId { get; set; }
 
     #region VIRTUAL REFERENCES
     

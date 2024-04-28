@@ -39,7 +39,7 @@ public class DeleteSiparisCommand : IRequest<DeletedSiparisResponse>, ISecuredRe
 
         public async Task<DeletedSiparisResponse> Handle(DeleteSiparisCommand request, CancellationToken cancellationToken)
         {
-            Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
+            Domain.Entities.Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
             await _siparisBusinessRules.SiparisShouldExistWhenSelected(siparis);
 
             await _siparisRepository.DeleteAsync(siparis!);

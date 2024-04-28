@@ -19,6 +19,9 @@ public class PortfolyoConfiguration : IEntityTypeConfiguration<Portfolyo>
         builder.Property(p => p.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(p => p.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(p => p.Kullanici);
+        builder.HasOne(p => p.Siparis);
+
         builder.HasQueryFilter(p => !p.DeletedDate.HasValue);
     }
 }

@@ -45,7 +45,7 @@ public class UpdateSiparisCommand : IRequest<UpdatedSiparisResponse>, ISecuredRe
 
         public async Task<UpdatedSiparisResponse> Handle(UpdateSiparisCommand request, CancellationToken cancellationToken)
         {
-            Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
+            Domain.Entities.Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
             await _siparisBusinessRules.SiparisShouldExistWhenSelected(siparis);
             siparis = _mapper.Map(request, siparis);
 

@@ -20,6 +20,9 @@ public class SistemGecmisiConfiguration : IEntityTypeConfiguration<SistemGecmisi
         builder.Property(sg => sg.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(sg => sg.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(sg => sg.User1);
+        builder.HasOne(sg => sg.User2);
+
         builder.HasQueryFilter(sg => !sg.DeletedDate.HasValue);
     }
 }

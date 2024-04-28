@@ -25,6 +25,9 @@ public class KuponConfiguration : IEntityTypeConfiguration<Kupon>
         builder.Property(k => k.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(k => k.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(k => k.Sahibi);
+        builder.HasMany(k => k.Siparisler);
+
         builder.HasQueryFilter(k => !k.DeletedDate.HasValue);
     }
 }

@@ -19,6 +19,8 @@ public class KullaniciAyarConfiguration : IEntityTypeConfiguration<KullaniciAyar
         builder.Property(ka => ka.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(ka => ka.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(ka => ka.Kullanici);
+
         builder.HasQueryFilter(ka => !ka.DeletedDate.HasValue);
     }
 }

@@ -19,6 +19,8 @@ public class MesajEkConfiguration : IEntityTypeConfiguration<MesajEk>
         builder.Property(me => me.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(me => me.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(me => me.Mesaj);
+
         builder.HasQueryFilter(me => !me.DeletedDate.HasValue);
     }
 }

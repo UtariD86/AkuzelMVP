@@ -25,6 +25,12 @@ public class IlanConfiguration : IEntityTypeConfiguration<Ilan>
         builder.Property(i => i.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(i => i.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(i => i.IlanSahibi);
+        builder.HasOne(i => i.Kategori);
+
+        builder.HasMany(i => i.Teklifs);
+        builder.HasMany(i => i.IlanListes);
+
         builder.HasQueryFilter(i => !i.DeletedDate.HasValue);
     }
 }

@@ -21,6 +21,11 @@ public class TicketConfiguration : IEntityTypeConfiguration<Ticket>
         builder.Property(t => t.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(t => t.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(t => t.Kullanici);
+        builder.HasOne(t => t.Departman);
+        builder.HasOne(t => t.Hizmet);
+        builder.HasMany(t => t.Mesajs);
+
         builder.HasQueryFilter(t => !t.DeletedDate.HasValue);
     }
 }

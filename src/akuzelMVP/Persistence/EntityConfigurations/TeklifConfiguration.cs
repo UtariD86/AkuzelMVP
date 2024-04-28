@@ -22,6 +22,10 @@ public class TeklifConfiguration : IEntityTypeConfiguration<Teklif>
         builder.Property(t => t.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(t => t.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(t => t.Gonderen);
+        builder.HasOne(t => t.Muhattap);
+        builder.HasOne(t => t.Ilan);
+
         builder.HasQueryFilter(t => !t.DeletedDate.HasValue);
     }
 }

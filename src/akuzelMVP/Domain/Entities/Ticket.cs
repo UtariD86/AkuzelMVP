@@ -22,7 +22,7 @@ public class Ticket : Entity<Guid>
 
     #region VIRTUAL REFERENCES
 
-    public virtual ICollection<Mesaj>? Mesajs { get; set; } = default!;
+    public virtual IEnumerable<Mesaj>? Mesajs { get; set; } = default!;
 
     public virtual User? Kullanici { get; set; }
 

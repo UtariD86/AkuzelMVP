@@ -19,6 +19,10 @@ public class TakimConfiguration : IEntityTypeConfiguration<Takim>
         builder.Property(t => t.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(t => t.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(t => t.Kurucu);
+        builder.HasMany(t => t.KullaniciTakim);
+        builder.HasMany(t => t.BankaHesaplari);
+
         builder.HasQueryFilter(t => !t.DeletedDate.HasValue);
     }
 }

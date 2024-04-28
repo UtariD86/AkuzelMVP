@@ -35,7 +35,7 @@ public class Medya : Entity<Guid>
     /// <summary>
     /// Takım kurucusu
     /// </summary>
-    public virtual User? Kurucu { get; set; }
+    public virtual User? Kullanici { get; set; }
     #endregion
 
 }

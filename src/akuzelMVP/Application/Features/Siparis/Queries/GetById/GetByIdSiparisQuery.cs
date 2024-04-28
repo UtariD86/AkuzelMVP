@@ -30,7 +30,7 @@ public class GetByIdSiparisQuery : IRequest<GetByIdSiparisResponse>, ISecuredReq
 
         public async Task<GetByIdSiparisResponse> Handle(GetByIdSiparisQuery request, CancellationToken cancellationToken)
         {
-            Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
+            Domain.Entities.Siparis? siparis = await _siparisRepository.GetAsync(predicate: s => s.Id == request.Id, cancellationToken: cancellationToken);
             await _siparisBusinessRules.SiparisShouldExistWhenSelected(siparis);
 
             GetByIdSiparisResponse response = _mapper.Map<GetByIdSiparisResponse>(siparis);

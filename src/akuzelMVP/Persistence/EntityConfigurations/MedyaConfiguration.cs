@@ -20,6 +20,8 @@ public class MedyaConfiguration : IEntityTypeConfiguration<Medya>
         builder.Property(m => m.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(m => m.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(m => m.Kullanici);
+
         builder.HasQueryFilter(m => !m.DeletedDate.HasValue);
     }
 }

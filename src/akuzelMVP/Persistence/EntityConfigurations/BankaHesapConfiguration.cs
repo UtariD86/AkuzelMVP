@@ -21,6 +21,8 @@ public class BankaHesapConfiguration : IEntityTypeConfiguration<BankaHesap>
         builder.Property(bh => bh.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(bh => bh.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(bh => bh.HesapSahibiUser);
+        builder.HasOne(bh => bh.HesapSahibiTakim);
         builder.HasQueryFilter(bh => !bh.DeletedDate.HasValue);
     }
 }

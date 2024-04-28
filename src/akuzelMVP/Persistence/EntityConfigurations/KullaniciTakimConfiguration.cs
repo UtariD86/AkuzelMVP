@@ -19,6 +19,9 @@ public class KullaniciTakimConfiguration : IEntityTypeConfiguration<KullaniciTak
         builder.Property(kt => kt.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(kt => kt.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(kt => kt.Takim);
+        builder.HasOne(kt => kt.Uye);
+
         builder.HasQueryFilter(kt => !kt.DeletedDate.HasValue);
     }
 }

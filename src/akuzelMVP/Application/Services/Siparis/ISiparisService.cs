@@ -7,24 +7,24 @@ namespace Application.Services.Siparis;
 
 public interface ISiparisService
 {
-    Task<Siparis?> GetAsync(
-        Expression<Func<Siparis, bool>> predicate,
-        Func<IQueryable<Siparis>, IIncludableQueryable<Siparis, object>>? include = null,
+    Task<Domain.Entities.Siparis?> GetAsync(
+        Expression<Func<Domain.Entities.Siparis, bool>> predicate,
+        Func<IQueryable<Domain.Entities.Siparis>, IIncludableQueryable<Domain.Entities.Siparis, object>>? include = null,
         bool withDeleted = false,
         bool enableTracking = true,
         CancellationToken cancellationToken = default
     );
-    Task<IPaginate<Siparis>?> GetListAsync(
-        Expression<Func<Siparis, bool>>? predicate = null,
-        Func<IQueryable<Siparis>, IOrderedQueryable<Siparis>>? orderBy = null,
-        Func<IQueryable<Siparis>, IIncludableQueryable<Siparis, object>>? include = null,
+    Task<IPaginate<Domain.Entities.Siparis>?> GetListAsync(
+        Expression<Func<Domain.Entities.Siparis, bool>>? predicate = null,
+        Func<IQueryable<Domain.Entities.Siparis>, IOrderedQueryable<Domain.Entities.Siparis>>? orderBy = null,
+        Func<IQueryable<Domain.Entities.Siparis>, IIncludableQueryable<Domain.Entities.Siparis, object>>? include = null,
         int index = 0,
         int size = 10,
         bool withDeleted = false,
         bool enableTracking = true,
         CancellationToken cancellationToken = default
     );
-    Task<Siparis> AddAsync(Siparis siparis);
-    Task<Siparis> UpdateAsync(Siparis siparis);
-    Task<Siparis> DeleteAsync(Siparis siparis, bool permanent = false);
+    Task<Domain.Entities.Siparis> AddAsync(Domain.Entities.Siparis siparis);
+    Task<Domain.Entities.Siparis> UpdateAsync(Domain.Entities.Siparis siparis);
+    Task<Domain.Entities.Siparis> DeleteAsync(Domain.Entities.Siparis siparis, bool permanent = false);
 }

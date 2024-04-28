@@ -21,6 +21,14 @@ public class SiparisConfiguration : IEntityTypeConfiguration<Siparis>
         builder.Property(s => s.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(s => s.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(s => s.Teklif);
+        builder.HasOne(s => s.Kupon);
+        builder.HasOne(s => s.Portfolyo);
+        builder.HasMany(s => s.Degerlendirmes);
+        builder.HasMany(s => s.BakiyeGecmisis);
+
+
+
         builder.HasQueryFilter(s => !s.DeletedDate.HasValue);
     }
 }

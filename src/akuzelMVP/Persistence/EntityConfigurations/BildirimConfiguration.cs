@@ -17,6 +17,8 @@ public class BildirimConfiguration : IEntityTypeConfiguration<Bildirim>
         builder.Property(b => b.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(b => b.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasMany(b => b.KullaniciBildirims);
+
         builder.HasQueryFilter(b => !b.DeletedDate.HasValue);
     }
 }

@@ -18,22 +18,22 @@ public class SiparisManager : ISiparisService
         _siparisBusinessRules = siparisBusinessRules;
     }
 
-    public async Task<Siparis?> GetAsync(
-        Expression<Func<Siparis, bool>> predicate,
-        Func<IQueryable<Siparis>, IIncludableQueryable<Siparis, object>>? include = null,
+    public async Task<Domain.Entities.Siparis?> GetAsync(
+        Expression<Func<Domain.Entities.Siparis, bool>> predicate,
+        Func<IQueryable<Domain.Entities.Siparis>, IIncludableQueryable<Domain.Entities.Siparis, object>>? include = null,
         bool withDeleted = false,
         bool enableTracking = true,
         CancellationToken cancellationToken = default
     )
     {
-        Siparis? siparis = await _siparisRepository.GetAsync(predicate, include, withDeleted, enableTracking, cancellationToken);
+        Domain.Entities.Siparis? siparis = await _siparisRepository.GetAsync(predicate, include, withDeleted, enableTracking, cancellationToken);
         return siparis;
     }
 
-    public async Task<IPaginate<Siparis>?> GetListAsync(
-        Expression<Func<Siparis, bool>>? predicate = null,
-        Func<IQueryable<Siparis>, IOrderedQueryable<Siparis>>? orderBy = null,
-        Func<IQueryable<Siparis>, IIncludableQueryable<Siparis, object>>? include = null,
+    public async Task<IPaginate<Domain.Entities.Siparis>?> GetListAsync(
+        Expression<Func<Domain.Entities.Siparis, bool>>? predicate = null,
+        Func<IQueryable<Domain.Entities.Siparis>, IOrderedQueryable<Domain.Entities.Siparis>>? orderBy = null,
+        Func<IQueryable<Domain.Entities.Siparis>, IIncludableQueryable<Domain.Entities.Siparis, object>>? include = null,
         int index = 0,
         int size = 10,
         bool withDeleted = false,
@@ -41,7 +41,7 @@ public class SiparisManager : ISiparisService
         CancellationToken cancellationToken = default
     )
     {
-        IPaginate<Siparis> siparisList = await _siparisRepository.GetListAsync(
+        IPaginate<Domain.Entities.Siparis> siparisList = await _siparisRepository.GetListAsync(
             predicate,
             orderBy,
             include,
@@ -54,23 +54,23 @@ public class SiparisManager : ISiparisService
         return siparisList;
     }
 
-    public async Task<Siparis> AddAsync(Siparis siparis)
+    public async Task<Domain.Entities.Siparis> AddAsync(Domain.Entities.Siparis siparis)
     {
-        Siparis addedSiparis = await _siparisRepository.AddAsync(siparis);
+        Domain.Entities.Siparis addedSiparis = await _siparisRepository.AddAsync(siparis);
 
         return addedSiparis;
     }
 
-    public async Task<Siparis> UpdateAsync(Siparis siparis)
+    public async Task<Domain.Entities.Siparis> UpdateAsync(Domain.Entities.Siparis siparis)
     {
-        Siparis updatedSiparis = await _siparisRepository.UpdateAsync(siparis);
+        Domain.Entities.Siparis updatedSiparis = await _siparisRepository.UpdateAsync(siparis);
 
         return updatedSiparis;
     }
 
-    public async Task<Siparis> DeleteAsync(Siparis siparis, bool permanent = false)
+    public async Task<Domain.Entities.Siparis> DeleteAsync(Domain.Entities.Siparis siparis, bool permanent = false)
     {
-        Siparis deletedSiparis = await _siparisRepository.DeleteAsync(siparis);
+        Domain.Entities.Siparis deletedSiparis = await _siparisRepository.DeleteAsync(siparis);
 
         return deletedSiparis;
     }

@@ -44,7 +44,7 @@ public class CreateSiparisCommand : IRequest<CreatedSiparisResponse>, ISecuredRe
 
         public async Task<CreatedSiparisResponse> Handle(CreateSiparisCommand request, CancellationToken cancellationToken)
         {
-            Siparis siparis = _mapper.Map<Siparis>(request);
+            Domain.Entities.Siparis siparis = _mapper.Map<Domain.Entities.Siparis>(request);
 
             await _siparisRepository.AddAsync(siparis);
 

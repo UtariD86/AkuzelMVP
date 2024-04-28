@@ -24,6 +24,13 @@ public class DegerlendirmeConfiguration : IEntityTypeConfiguration<Degerlendirme
         builder.Property(d => d.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(d => d.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(d => d.Siparis);
+        builder.HasOne(d => d.Profil);
+        builder.HasOne(d => d.Kullanici);
+        builder.HasOne(d => d.UstDegerlendirme);
+
+        builder.HasMany(d => d.Cevaplar);
+
         builder.HasQueryFilter(d => !d.DeletedDate.HasValue);
     }
 }

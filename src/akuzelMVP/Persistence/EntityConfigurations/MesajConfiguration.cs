@@ -21,6 +21,11 @@ public class MesajConfiguration : IEntityTypeConfiguration<Mesaj>
         builder.Property(m => m.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(m => m.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(m => m.Sender);
+        builder.HasOne(m => m.Reciever);
+        builder.HasOne(m => m.Ticket);
+        builder.HasMany(m => m.MesajEks);
+
         builder.HasQueryFilter(m => !m.DeletedDate.HasValue);
     }
 }

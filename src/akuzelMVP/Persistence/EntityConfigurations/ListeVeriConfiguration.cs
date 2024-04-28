@@ -23,6 +23,22 @@ public class ListeVeriConfiguration : IEntityTypeConfiguration<ListeVeri>
         builder.Property(lv => lv.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(lv => lv.DeletedDate).HasColumnName("DeletedDate");
 
+        //builder.HasOne(lv => lv.Parent);
+        //builder.HasOne(lv => lv.Children);
+
+        builder.HasOne(lv => lv.Parent)
+               .WithMany()  // Assuming Parent can have multiple children
+               .HasForeignKey(lv => lv.UstId)
+               .IsRequired(false);  // Parent might be null for top-level items
+
+        builder.HasMany(lv => lv.Children)
+               .WithOne(child => child.Parent)
+               .HasForeignKey(child => child.UstId)
+               .IsRequired(false);
+
+        builder.HasMany(lv => lv.Ilanlar);
+        builder.HasMany(lv => lv.Kullanicilar);
+
         builder.HasQueryFilter(lv => !lv.DeletedDate.HasValue);
     }
 }

@@ -18,6 +18,8 @@ public class ListeConfiguration : IEntityTypeConfiguration<Liste>
         builder.Property(l => l.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(l => l.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasMany(l => l.IlanListes);
+
         builder.HasQueryFilter(l => !l.DeletedDate.HasValue);
     }
 }

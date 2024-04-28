@@ -24,7 +24,7 @@ public class SiparisBusinessRules : BaseBusinessRules
         throw new BusinessException(message);
     }
 
-    public async Task SiparisShouldExistWhenSelected(Siparis? siparis)
+    public async Task SiparisShouldExistWhenSelected(Domain.Entities.Siparis? siparis)
     {
         if (siparis == null)
             await throwBusinessException(SiparisBusinessMessages.SiparisNotExists);
@@ -32,7 +32,7 @@ public class SiparisBusinessRules : BaseBusinessRules
 
     public async Task SiparisIdShouldExistWhenSelected(Guid id, CancellationToken cancellationToken)
     {
-        Siparis? siparis = await _siparisRepository.GetAsync(
+        Domain.Entities.Siparis? siparis = await _siparisRepository.GetAsync(
             predicate: s => s.Id == id,
             enableTracking: false,
             cancellationToken: cancellationToken

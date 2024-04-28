@@ -24,6 +24,10 @@ public class BakiyeGecmisiConfiguration : IEntityTypeConfiguration<BakiyeGecmisi
         builder.Property(bg => bg.UpdatedDate).HasColumnName("UpdatedDate");
         builder.Property(bg => bg.DeletedDate).HasColumnName("DeletedDate");
 
+        builder.HasOne(bg => bg.User1);
+        builder.HasOne(bg => bg.User2);
+        builder.HasOne(bg => bg.Siparis);
+
         builder.HasQueryFilter(bg => !bg.DeletedDate.HasValue);
     }
 }
