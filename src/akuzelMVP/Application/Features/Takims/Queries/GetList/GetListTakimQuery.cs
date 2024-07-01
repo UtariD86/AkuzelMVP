@@ -12,7 +12,7 @@ using static Application.Features.Takims.Constants.TakimsOperationClaims;
 
 namespace Application.Features.Takims.Queries.GetList;
 
-public class GetListTakimQuery : IRequest<GetListResponse<GetListTakimListItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListTakimQuery : IRequest<GetListResponse<GetListTakimListItemDto>>, /*ISecuredRequest,*/ ICachableRequest
 {
     public PageRequest PageRequest { get; set; }
 

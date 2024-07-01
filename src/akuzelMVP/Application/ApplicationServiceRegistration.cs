@@ -41,6 +41,11 @@ using Application.Services.SistemGecmisis;
 using Application.Services.Takims;
 using Application.Services.Teklifs;
 using Application.Services.Tickets;
+using Application.Services.SearchService;
+using Application.Features.Takims.Queries.GetFilteredList;
+using Application.Features.Searching;
+using Domain.Entities;
+using System.Linq.Expressions;
 
 namespace Application;
 
@@ -74,6 +79,11 @@ public static class ApplicationServiceRegistration
         services.AddSingleton<ILogger, SerilogFileLogger>(_ => new SerilogFileLogger(fileLogConfiguration));
         services.AddSingleton<IElasticSearch, ElasticSearchManager>(_ => new ElasticSearchManager(elasticSearchConfig));
 
+        //search
+        //services.AddSingleton<ISearchService<GetFilteredListTakimFilterDto>, SearchManager<GetFilteredListTakimFilterDto>>();
+
+
+
         services.AddScoped<IAuthService, AuthManager>();
         services.AddScoped<IAuthenticatorService, AuthenticatorManager>();
         services.AddScoped<IUserService, UserManager>();
@@ -103,6 +113,16 @@ public static class ApplicationServiceRegistration
         services.AddScoped<ITakimService, TakimManager>();
         services.AddScoped<ITeklifService, TeklifManager>();
         services.AddScoped<ITicketService, TicketManager>();
+
+        //services.AddScoped<ISearch<Takim>, Search<Takim>>();
+        services.AddTransient<Expression<Func<Takim, bool>>>(_ => _ => true);
+
+        //services.AddScoped<ISearch<CourseDTO>, Search<CourseDTO>>();
+        //services.AddScoped<ISearch<CourseDTO>, StringContains>();
+        services.AddScoped<ISearch<Takim>, AndSearch<Takim>>();
+        services.AddScoped<BaseExpressions<Takim>.StringContains>();
+        services.AddScoped<AndSearch<Takim>>();
+        services.AddScoped(typeof(ISearchService<Takim>), typeof(SearchManager<Takim>));
         return services;
     }
 

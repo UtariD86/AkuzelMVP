@@ -7,7 +7,7 @@ public class CreateListeVeriCommandValidator : AbstractValidator<CreateListeVeri
     public CreateListeVeriCommandValidator()
     {
         RuleFor(c => c.Type).NotEmpty();
-        RuleFor(c => c.Derinlik).NotEmpty();
+        RuleFor(c => c.Derinlik).GreaterThan(-1);
         RuleFor(c => c.Deger).NotEmpty();
         RuleFor(c => c.DuzenleyenId).NotEmpty();
     }

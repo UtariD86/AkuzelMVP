@@ -12,7 +12,7 @@ using static Application.Features.Takims.Constants.TakimsOperationClaims;
 
 namespace Application.Features.Takims.Commands.Create;
 
-public class CreateTakimCommand : IRequest<CreatedTakimResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateTakimCommand : IRequest<CreatedTakimResponse>, /*ISecuredRequest,*/ ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public required Guid KurucuId { get; set; }
     public required string Adı { get; set; }

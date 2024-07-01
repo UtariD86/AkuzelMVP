@@ -6,6 +6,7 @@ using Application.Features.Takims.Queries.GetList;
 using NArchitecture.Core.Application.Requests;
 using NArchitecture.Core.Application.Responses;
 using Microsoft.AspNetCore.Mvc;
+using Application.Features.Takims.Queries.GetFilteredList;
 
 namespace WebAPI.Controllers;
 
@@ -49,7 +50,7 @@ public class TakimsController : BaseController
         return Ok(response);
     }
 
-    [HttpGet]
+    [HttpGet("list", Name = "GetList")]
     public async Task<ActionResult<GetListTakimQuery>> GetList([FromQuery] PageRequest pageRequest)
     {
         GetListTakimQuery query = new() { PageRequest = pageRequest };
@@ -58,4 +59,15 @@ public class TakimsController : BaseController
 
         return Ok(response);
     }
+
+    [HttpPost("filteredList", Name = "GetFilteredList")]
+    public async Task<ActionResult<GetFilteredListTakimQuery>> GetFilteredList([FromQuery] PageRequest pageRequest, GetFilteredListTakimFilterDto filtreler)
+    {
+        GetFilteredListTakimQuery query = new() { PageRequest = pageRequest, Filtreler = filtreler };
+
+        GetListResponse<GetFilteredListTakimListItemDto> response = await Mediator.Send(query);
+
+        return Ok(response);
+    }
+
 }

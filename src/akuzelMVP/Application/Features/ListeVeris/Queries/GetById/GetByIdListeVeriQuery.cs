@@ -9,7 +9,7 @@ using static Application.Features.ListeVeris.Constants.ListeVerisOperationClaims
 
 namespace Application.Features.ListeVeris.Queries.GetById;
 
-public class GetByIdListeVeriQuery : IRequest<GetByIdListeVeriResponse>, ISecuredRequest
+public class GetByIdListeVeriQuery : IRequest<GetByIdListeVeriResponse>/*, ISecuredRequest*/
 {
     public Guid Id { get; set; }
 

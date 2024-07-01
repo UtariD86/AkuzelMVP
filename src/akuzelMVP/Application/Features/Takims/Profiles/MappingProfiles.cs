@@ -7,6 +7,7 @@ using AutoMapper;
 using NArchitecture.Core.Application.Responses;
 using Domain.Entities;
 using NArchitecture.Core.Persistence.Paging;
+using Application.Features.Takims.Queries.GetFilteredList;
 
 namespace Application.Features.Takims.Profiles;
 
@@ -27,5 +28,8 @@ public class MappingProfiles : Profile
 
         CreateMap<Takim, GetListTakimListItemDto>();
         CreateMap<IPaginate<Takim>, GetListResponse<GetListTakimListItemDto>>();
+
+        CreateMap<Takim, GetFilteredListTakimListItemDto>();
+        CreateMap<IPaginate<Takim>, GetListResponse<GetFilteredListTakimListItemDto>>();
     }
 }

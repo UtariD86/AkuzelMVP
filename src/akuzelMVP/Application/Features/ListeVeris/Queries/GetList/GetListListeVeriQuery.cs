@@ -12,7 +12,7 @@ using static Application.Features.ListeVeris.Constants.ListeVerisOperationClaims
 
 namespace Application.Features.ListeVeris.Queries.GetList;
 
-public class GetListListeVeriQuery : IRequest<GetListResponse<GetListListeVeriListItemDto>>, ISecuredRequest, ICachableRequest
+public class GetListListeVeriQuery : IRequest<GetListResponse<GetListListeVeriListItemDto>>, /*ISecuredRequest,*/ ICachableRequest
 {
     public PageRequest PageRequest { get; set; }
 

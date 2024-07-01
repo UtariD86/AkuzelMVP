@@ -13,7 +13,7 @@ using static Application.Features.ListeVeris.Constants.ListeVerisOperationClaims
 
 namespace Application.Features.ListeVeris.Commands.Delete;
 
-public class DeleteListeVeriCommand : IRequest<DeletedListeVeriResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class DeleteListeVeriCommand : IRequest<DeletedListeVeriResponse>,/* ISecuredRequest,*/ ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public Guid Id { get; set; }
 

@@ -13,7 +13,7 @@ using static Application.Features.ListeVeris.Constants.ListeVerisOperationClaims
 
 namespace Application.Features.ListeVeris.Commands.Create;
 
-public class CreateListeVeriCommand : IRequest<CreatedListeVeriResponse>, ISecuredRequest, ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
+public class CreateListeVeriCommand : IRequest<CreatedListeVeriResponse>, /*ISecuredRequest,*/ ICacheRemoverRequest, ILoggableRequest, ITransactionalRequest
 {
     public required ListeVeriType Type { get; set; }
     public Guid? UstId { get; set; }
